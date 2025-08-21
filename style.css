@@ -183,3 +183,9 @@ section h2::after {
 
 .projects .project-card .project-content {
   padding: 25
+.bio {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #333;
+    margin-top: 20px;
+}
