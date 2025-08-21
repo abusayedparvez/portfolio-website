@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of ABU SAYED PARVEZ - Bachelor of Pharmacy student, Content Creator, YouTuber.">
+  <meta name="keywords" content="ABU SAYED PARVEZ, Portfolio, Pharmacy, YouTube, Content Creator, Science Explainer">
+  <meta name="author" content="ABU SAYED PARVEZ">
+  <title>ABU SAYED PARVEZ Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <div class="logo">Parvez</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    </nav>
+  </header>
+
+  <!-- Home / About Me -->
+  <section id="home" class="home-section">
+    <div class="container">
+      <div class="intro">
+        <img src="profile-placeholder.jpg" alt="ABU SAYED PARVEZ">
+        <h1>Hi, I'm ABU SAYED PARVEZ</h1>
+        <p>Bachelor of Pharmacy student, Content Creator & YouTuber</p>
+        <p>I create educational content on Medicine, Pharmacology, Health, Science, University Admission Guides, Study Tips, Money Management, and Communication Tricks.</p>
+        <a href="#contact" class="btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2>My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">
+          <h3>Medicine & Pharmacology</h3>
+          <div class="progress-bar"><div style="width: 90%;"></div></div>
+        </div>
+        <div class="skill">
+          <h3>Health & Science Explainers</h3>
+          <div class="progress-bar"><div style="width: 85%;"></div></div>
+        </div>
+        <div class="skill">
+          <h3>Video Editing & Graphic Design</h3>
+          <div class="progress-bar"><div style="width: 80%;"></div></div>
+        </div>
+        <div class="skill">
+          <h3>Study Tips & University Guides</h3>
+          <div class="progress-bar"><div style="width: 88%;"></div></div>
+        </div>
+        <div class="skill">
+          <h3>Money Management & Communication</h3>
+          <div class="progress-bar"><div style="width: 75%;"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects / Work -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects & Work</h2>
+      <div class="projects-grid">
+        <div class="project" onclick="openModal('modal1')">
+          <img src="youtube-placeholder.jpg" alt="YouTube Project">
+          <h3>Medicine & Pharmacology Tutorials</h3>
+          <p>Educational content on Pharmacy & Health topics for YouTube.</p>
+        </div>
+        <div class="project" onclick="openModal('modal2')">
+          <img src="graphic-placeholder.jpg" alt="Graphic Project">
+          <h3>Graphic & Video Content</h3>
+          <p>Designing educational graphics, thumbnails, and short videos.</p>
+        </div>
+        <!-- Add more projects -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Modals -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h2>Medicine & Pharmacology Tutorials</h2>
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/videoseries?list=YOUR_PLAYLIST_ID" frameborder="0" allowfullscreen></iframe>
+      <p>Here I explain various medicine, pharmacology, and health-related topics in detail for students and general audience.</p>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h2>Graphic & Video Content</h2>
+      <p>I design visually appealing graphics, thumbnails, and short educational videos for social media.</p>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <ul>
+        <li>Bachelor of Pharmacy (B.Pharm), Pabna University of Science and Technology</li>
+        <li>Training in Pharmaceutical Company & Hospital</li>
+        <li>Active in voluntary & student organizations</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="social-links">
+        <a href="https://www.youtube.com/@AbuSayedParvez" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ABU SAYED PARVEZ. All rights reserved.</p>
+  </footer>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
