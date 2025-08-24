@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abusayedparvez.github.io/portfolio/sitemap.xml
