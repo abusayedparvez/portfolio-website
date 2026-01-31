@@ -1,6 +1,6 @@
-/* =========================================
+/* =================================
    RESET
-========================================= */
+================================= */
 
 *,
 *::before,
@@ -18,7 +18,7 @@ body{
   font-family:'Poppins',sans-serif;
   background:#f6f8fb;
   color:#222;
-  line-height:1.6;
+  line-height:1.65;
   overflow-x:hidden;
 }
 
@@ -26,6 +26,7 @@ img{
   width:100%;
   height:auto;
   display:block;
+  border-radius:12px;
 }
 
 a{
@@ -35,42 +36,42 @@ a{
 
 
 
-/* =========================================
+/* =================================
    CONTAINER
-========================================= */
+================================= */
 
 .container{
   width:100%;
   max-width:1200px;
   margin:auto;
-  padding-inline:20px;
+  padding:0 18px;
 }
 
 
 
-/* =========================================
+/* =================================
    SECTION
-========================================= */
+================================= */
 
 .section{
-  padding:70px 0;
+  padding:80px 0;
 }
 
 .section--alt{
-  background:#ffffff;
+  background:#fff;
 }
 
 
 
-/* =========================================
+/* =================================
    NAVBAR
-========================================= */
+================================= */
 
 .site-header{
   position:sticky;
   top:0;
-  background:#fff;
   z-index:1000;
+  background:#fff;
   box-shadow:0 2px 10px rgba(0,0,0,.06);
 }
 
@@ -78,32 +79,30 @@ a{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:16px 20px;
+  padding:14px 18px;
 }
 
 
-/* 🔥 LOGO BIG + GRADIENT */
+/* ===== LOGO ===== */
 .nav__logo{
-  font-size:22px;
+  font-size:24px;
   font-weight:800;
-  letter-spacing:1px;
-
-  background:linear-gradient(135deg,#111,#2563eb);
+  background:linear-gradient(135deg,#000,#2563eb);
   -webkit-background-clip:text;
   color:transparent;
 }
 
 
-/* MENU */
+/* ===== MENU ===== */
 .nav__menu{
   display:flex;
-  gap:20px;
+  gap:18px;
   align-items:center;
 }
 
 .nav__menu a{
+  padding:7px 10px;
   font-weight:500;
-  padding:8px 10px;
   border-radius:8px;
 }
 
@@ -112,26 +111,30 @@ a{
 }
 
 
-/* 🔥 YOUTUBE BUTTON */
+/* ===== YOUTUBE BUTTON ===== */
 .nav__cta{
   background:linear-gradient(135deg,#ff0000,#b30000);
   color:#fff;
-  font-weight:700;
   padding:10px 18px;
+  font-weight:700;
   border-radius:10px;
-  transition:.3s;
-}
-
-.nav__cta:hover{
-  transform:translateY(-2px);
-  box-shadow:0 6px 18px rgba(255,0,0,.35);
 }
 
 
+/* ===== MOBILE TOGGLE ===== */
+.nav__toggle{
+  display:none;
+  font-size:26px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
 
-/* =========================================
+
+
+/* =================================
    HERO
-========================================= */
+================================= */
 
 .hero{
   background:linear-gradient(180deg,#f9fbff,#f6f8fb);
@@ -152,17 +155,17 @@ a{
 
 
 
-/* =========================================
-   BUTTONS
-========================================= */
+/* =================================
+   BUTTON
+================================= */
 
 .btn{
-  display:inline-block;
   background:#2563eb;
   color:#fff;
   padding:12px 20px;
   border-radius:10px;
   font-weight:600;
+  display:inline-block;
   transition:.25s;
 }
 
@@ -173,162 +176,109 @@ a{
 
 .btn--ghost{
   background:#fff;
-  border:2px solid #2563eb;
   color:#2563eb;
+  border:2px solid #2563eb;
 }
 
 
 
-/* =========================================
-   CARDS (PROJECTS ETC)
-========================================= */
+/* =================================
+   CARDS
+================================= */
 
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:24px;
+  gap:26px;
 }
 
 .card{
   background:#fff;
   border-radius:16px;
-  overflow:hidden;
+  padding:22px;
   box-shadow:0 10px 28px rgba(0,0,0,.08);
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-6px);
 }
 
 .card__img{
   height:200px;
   object-fit:cover;
-}
-
-.card__body{
-  padding:18px;
+  margin-bottom:14px;
 }
 
 
 
-/* =========================================
-   POSTS (🔥 PROFESSIONAL)
-========================================= */
+/* =================================
+   POSTS
+================================= */
 
 #posts{
   display:grid;
   gap:30px;
-  margin-top:30px;
 }
 
-
-/* CARD */
 .post-card{
   background:#fff;
   border-radius:18px;
-  overflow:hidden;
   box-shadow:0 12px 30px rgba(0,0,0,.08);
-  max-width:750px;
-  margin:auto;
-  transition:.3s;
+  overflow:hidden;
 }
 
-.post-card:hover{
-  transform:translateY(-6px);
-}
-
-
-/* IMAGE (NO CROP) */
 .post-img{
   width:100%;
   height:auto;
   object-fit:contain;
 }
 
-
-/* BODY */
 .post-body{
-  padding:20px;
+  padding:22px;
 }
 
-
-/* TITLE */
 .post-title{
-  font-size:20px;
   font-weight:700;
   margin-bottom:10px;
 }
 
-
-/* TEXT JUSTIFY */
 .post-text{
   text-align:justify;
-  font-size:15px;
   color:#555;
   margin-bottom:14px;
 }
 
-
-/* BUTTON */
 .post-btn{
-  background:linear-gradient(135deg,#ff0000,#cc0000);
+  background:#ff0000;
   color:#fff;
   padding:10px 18px;
-  border-radius:10px;
+  border-radius:8px;
+}
+
+
+
+/* =================================
+   LINKS (certificate + social)
+================================= */
+
+.link{
+  color:#2563eb;
   font-weight:600;
-  display:inline-block;
-}
-
-.post-btn:hover{
-  transform:scale(1.05);
 }
 
 
 
-/* =========================================
-   TEXT JUSTIFY GLOBAL
-========================================= */
-
-p{
-  text-align:justify;
-}
-
-
-
-/* =========================================
+/* =================================
    FOOTER
-========================================= */
+================================= */
 
 .footer{
   background:#fff;
-  padding:20px 0;
   text-align:center;
-  font-size:14px;
+  padding:18px;
 }
 
 
 
-/* =========================================
-   ANIMATION
-========================================= */
-
-.reveal{
-  opacity:0;
-  transform:translateY(25px);
-  transition:.6s;
-}
-
-.reveal.is-visible{
-  opacity:1;
-  transform:none;
-}
-
-
-
-/* =========================================
+/* =================================
    MOBILE RESPONSIVE
-========================================= */
+================================= */
 
 @media(max-width:768px){
 
@@ -339,220 +289,29 @@ p{
 
   .nav__menu{
     display:none;
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    background:#fff;
+    flex-direction:column;
+    padding:14px 0;
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
   }
 
-  .post-card{
-    max-width:100%;
+  .nav__menu.open{
+    display:flex;
+  }
+
+  .nav__toggle{
+    display:block;
   }
 
   .section{
-    padding:50px 0;
+    padding:55px 0;
   }
 
-  .container{
-    padding-inline:14px;
+  .post-card{
+    margin:0 6px;
   }
-
-}
-/* =================================================
-   🔥 PREMIUM UPGRADE EFFECTS
-================================================= */
-
-
-/* ===== Glass Navbar ===== */
-.site-header{
-  backdrop-filter: blur(14px);
-  background: rgba(255,255,255,.85);
-}
-
-
-/* ===== Hero Floating Avatar ===== */
-.hero__avatar{
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
-}
-
-
-/* ===== Card Zoom Hover ===== */
-.card__img,
-.post-img{
-  transition:transform .5s ease;
-}
-
-.card:hover .card__img,
-.post-card:hover .post-img{
-  transform:scale(1.04);
-}
-
-
-/* ===== Gradient Animated Background ===== */
-.hero{
-  background: linear-gradient(-45deg,#eef3ff,#f6f8fb,#e6ecff,#f9fbff);
-  background-size:400% 400%;
-  animation: gradientMove 12s ease infinite;
-}
-
-@keyframes gradientMove{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
-
-/* ===== Button Ripple Effect ===== */
-.btn{
-  position:relative;
-  overflow:hidden;
-}
-
-.btn::after{
-  content:'';
-  position:absolute;
-  width:0;
-  height:0;
-  border-radius:50%;
-  background:rgba(255,255,255,.4);
-  transform:translate(-50%,-50%);
-  transition:.6s;
-}
-
-.btn:active::after{
-  width:300px;
-  height:300px;
-}
-
-
-/* ===== Smooth Section Fade ===== */
-.section{
-  animation: fadeUp 0.8s ease both;
-}
-
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px)}
-  to{opacity:1;transform:none}
-}
-
-
-/* ===== Dark Mode (auto) ===== */
-@media (prefers-color-scheme: dark){
-
-  body{
-    background:#0f172a;
-    color:#e5e7eb;
-  }
-
-  .card,
-  .post-card,
-  .section--alt,
-  .site-header{
-    background:#1e293b;
-  }
-
-  .post-text{
-    color:#cbd5e1;
-  }
-
-  .nav__logo{
-    background:linear-gradient(135deg,#fff,#60a5fa);
-    -webkit-background-clip:text;
-    color:transparent;
-  }
-}
-
-
-/* ===== Extra Smooth Mobile ===== */
-@media(max-width:480px){
-
-  h1{
-    font-size:24px;
-  }
-
-  .post-title{
-    font-size:16px;
-  }
-
-  .post-text{
-    font-size:14px;
-  }
-
-}
-
-/* ===============================
-   🔥 EXTRA PRO FEATURES
-================================ */
-
-
-/* ===== Scroll Progress Bar ===== */
-#progressBar{
-  position:fixed;
-  top:0;
-  left:0;
-  height:4px;
-  width:0%;
-  background:linear-gradient(90deg,#2575fc,#6a11cb);
-  z-index:9999;
-  transition:width .15s linear;
-}
-
-
-/* ===== Theme Toggle Button ===== */
-.theme-btn{
-  border:none;
-  background:#111;
-  color:#fff;
-  padding:8px 12px;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:14px;
-  margin-left:6px;
-}
-
-
-/* ===== Navbar shrink on scroll ===== */
-.site-header.shrink .nav{
-  height:56px;
-  box-shadow:0 6px 18px rgba(0,0,0,.12);
-}
-
-
-/* ===== Button glow effect ===== */
-.btn{
-  position:relative;
-}
-
-.btn:hover{
-  box-shadow:0 0 20px rgba(37,117,252,.5);
-}
-
-
-/* ===== Dark Mode Manual ===== */
-body.dark{
-  background:#0f172a;
-  color:#e5e7eb;
-}
-
-body.dark .card,
-body.dark .post-card,
-body.dark .section--alt,
-body.dark .site-header{
-  background:#1e293b;
-}
-
-body.dark .post-text{
-  color:#cbd5e1;
-}
-
-
-/* ===== Typing Cursor ===== */
-.typing::after{
-  content:"|";
-  animation:blink 1s infinite;
-}
-
-@keyframes blink{
-  50%{opacity:0}
 }
