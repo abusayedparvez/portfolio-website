@@ -315,3 +315,40 @@ a{
     margin:0 6px;
   }
 }
+
+/* =========================
+   MOBILE HAMBURGER MENU
+========================= */
+
+.nav__toggle{
+  display:none;
+  font-size:28px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+/* mobile only */
+@media(max-width:768px){
+
+  .nav__toggle{
+    display:block;
+  }
+
+  .nav__menu{
+    display:none;
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    background:#fff;
+    flex-direction:column;
+    padding:15px 0;
+    box-shadow:0 8px 18px rgba(0,0,0,.1);
+  }
+
+  .nav__menu.open{
+    display:flex;
+  }
+
+}
