@@ -480,3 +480,79 @@ p{
   }
 
 }
+
+/* ===============================
+   🔥 EXTRA PRO FEATURES
+================================ */
+
+
+/* ===== Scroll Progress Bar ===== */
+#progressBar{
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  width:0%;
+  background:linear-gradient(90deg,#2575fc,#6a11cb);
+  z-index:9999;
+  transition:width .15s linear;
+}
+
+
+/* ===== Theme Toggle Button ===== */
+.theme-btn{
+  border:none;
+  background:#111;
+  color:#fff;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:14px;
+  margin-left:6px;
+}
+
+
+/* ===== Navbar shrink on scroll ===== */
+.site-header.shrink .nav{
+  height:56px;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+
+
+/* ===== Button glow effect ===== */
+.btn{
+  position:relative;
+}
+
+.btn:hover{
+  box-shadow:0 0 20px rgba(37,117,252,.5);
+}
+
+
+/* ===== Dark Mode Manual ===== */
+body.dark{
+  background:#0f172a;
+  color:#e5e7eb;
+}
+
+body.dark .card,
+body.dark .post-card,
+body.dark .section--alt,
+body.dark .site-header{
+  background:#1e293b;
+}
+
+body.dark .post-text{
+  color:#cbd5e1;
+}
+
+
+/* ===== Typing Cursor ===== */
+.typing::after{
+  content:"|";
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+  50%{opacity:0}
+}
