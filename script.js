@@ -1,92 +1,54 @@
-/* =========================
-   DOM Ready
-========================= */
-document.addEventListener("DOMContentLoaded",()=>{
+/* ======================================
+   NAV TOGGLE
+====================================== */
 
-  initReveal();
-  initProgressBar();
-  initDarkMode();
-  initTyping();
+const toggle = document.querySelector(".nav__toggle");
+const menu = document.querySelector(".nav__menu");
 
+if(toggle){
+  toggle.onclick = () => menu.classList.toggle("open");
+}
+
+
+/* ======================================
+   SCROLL REVEAL ANIMATION
+====================================== */
+
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("is-visible");
+    }
+  });
+},{
+  threshold:0.15
 });
 
+reveals.forEach(el=>observer.observe(el));
 
 
-/* =========================
-   Reveal Animation
-========================= */
-function initReveal(){
+/* ======================================
+   FOOTER YEAR AUTO
+====================================== */
 
-  const elements = document.querySelectorAll(".reveal");
-
-  const observer = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add("is-visible");
-      }
-    });
-  });
-
-  elements.forEach(el=>observer.observe(el));
+const year = document.getElementById("year");
+if(year){
+  year.textContent = new Date().getFullYear();
 }
 
 
+/* ======================================
+   SMOOTH SCROLL
+====================================== */
 
-/* =========================
-   Scroll Progress Bar
-========================= */
-function initProgressBar(){
-
-  const bar = document.getElementById("progressBar");
-
-  window.addEventListener("scroll",()=>{
-
-    const scroll = document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-
-    bar.style.width = (scroll/height)*100 + "%";
-  });
-
-}
-
-
-
-/* =========================
-   Dark Mode
-========================= */
-function initDarkMode(){
-
-  const toggle = document.getElementById("themeToggle");
-
-  toggle.onclick = ()=>{
-    document.body.classList.toggle("dark");
-  };
-
-}
-
-
-
-/* =========================
-   Typing Effect
-========================= */
-function initTyping(){
-
-  const el = document.querySelector(".hero__tagline");
-
-  if(!el) return;
-
-  const text = el.innerText;
-
-  el.innerText = "";
-
-  let i=0;
-
-  function type(){
-    if(i<text.length){
-      el.innerText += text[i++];
-      setTimeout(type,18);
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener("click",e=>{
+    const target = document.querySelector(link.getAttribute("href"));
+    if(target){
+      e.preventDefault();
+      target.scrollIntoView({behavior:"smooth"});
     }
-  }
-
-  type();
-}
+  });
+});
