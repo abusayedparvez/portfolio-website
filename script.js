@@ -4,10 +4,9 @@
 const toggle = document.querySelector(".nav__toggle");
 const menu = document.querySelector(".nav__menu");
 
-if(toggle){
-  toggle.onclick = () => menu.classList.toggle("open");
-}
-
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("open");
+});
 
 /* =================================
    SCROLL PROGRESS BAR
@@ -100,3 +99,4 @@ const menu = document.querySelector(".nav__menu");
 toggle.addEventListener("click", () => {
   menu.classList.toggle("open");
 });
+
