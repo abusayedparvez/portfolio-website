@@ -206,6 +206,13 @@
         </div>
       </div>
     </section>
+    <!-- ===== POSTS ===== -->
+<section class="section section--alt">
+  <div class="container">
+    <h2>Latest Posts</h2>
+    <div id="posts"></div>
+  </div>
+</section>
 
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="section">
@@ -249,7 +256,52 @@
       <a class="link" href="https://abusayedparvez.github.io/portfolio/" target="_blank" rel="noopener">Back to top ↑</a>
     </div>
   </footer>
+<script type="module">
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+import { getFirestore, collection, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAjF6qnDJFFLD7h4tJ10e3z4BewCeai1e8",
+  authDomain: "parvez-portfolio-64cdd.firebaseapp.com",
+  projectId: "parvez-portfolio-64cdd",
+  storageBucket: "parvez-portfolio-64cdd.firebasestorage.app",
+  messagingSenderId: "17218030818",
+  appId: "1:17218030818:web:28da1deb8fcbb2396ce2bb"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const postsDiv = document.getElementById("posts");
+
+const q = query(collection(db, "posts"), orderBy("time", "desc"));
+
+onSnapshot(q, (snapshot) => {
+
+  postsDiv.innerHTML = "";
+
+  snapshot.forEach((doc) => {
+    const data = doc.data();
+
+    postsDiv.innerHTML += `
+      <div style="
+        background:white;
+        padding:15px;
+        margin:12px 0;
+        border-radius:10px;
+        box-shadow:0 2px 8px rgba(0,0,0,0.08);
+      ">
+        ${data.text}
+      </div>
+    `;
+  });
+
+});
+
+</script>
+  
   <script src="script.js"></script>
 </body>
 </html>
+
