@@ -278,11 +278,20 @@ const postsDiv = document.getElementById("posts");
 
 /* ===== YouTube thumbnail ===== */
 function getThumbnail(url){
+
   if(!url) return "";
-  const id = url.split("v=")[1]?.split("&")[0] || url.split("/").pop();
+
+  let id = "";
+
+  if(url.includes("youtu.be/")){
+    id = url.split("youtu.be/")[1].split("?")[0];
+  }
+  else if(url.includes("v=")){
+    id = url.split("v=")[1].split("&")[0];
+  }
+
   return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
 }
-
 
 /* ===== load posts ===== */
 const q = query(collection(db,"posts"), orderBy("time","desc"));
@@ -318,6 +327,7 @@ onSnapshot(q,(snapshot)=>{
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
