@@ -53,6 +53,64 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
 import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-storage.js";
+import { onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+const storage = getStorage(app);
+
+/* ===== ADD POST ===== */
+window.addPost = async function () {
+
+  let imageUrl = "";
+  const file = postImage.files[0];
+
+  if(file){
+    const storageRef = ref(storage, "images/" + Date.now() + file.name);
+    await uploadBytes(storageRef, file);
+    imageUrl = await getDownloadURL(storageRef);
+  }
+
+  await addDoc(collection(db, "posts"), {
+    title: postTitle.value,
+    text: postText.value,
+    image: imageUrl,
+    link: postLink.value,
+    btnText: postBtnText.value,
+    time: Date.now()
+  });
+
+  alert("Post added!");
+}
+
+
+/* ===== SHOW + DELETE POSTS ===== */
+
+const postList = document.createElement("div");
+document.body.appendChild(postList);
+
+onSnapshot(collection(db, "posts"), (snapshot) => {
+
+  postList.innerHTML = "<h3>Your Posts</h3>";
+
+  snapshot.forEach((d) => {
+
+    const data = d.data();
+
+    postList.innerHTML += `
+      <div style="border:1px solid #ddd;padding:10px;margin:10px 0">
+        ${data.title || ""}
+        <button onclick="deletePost('${d.id}')" style="margin-left:10px;background:red;color:white;border:none;padding:5px 10px">
+          Delete
+        </button>
+      </div>
+    `;
+  });
+
+});
+
+
+window.deletePost = async function(id){
+  await deleteDoc(doc(db, "posts", id));
+}
 
 /* ===== config ===== */
 const firebaseConfig = {
