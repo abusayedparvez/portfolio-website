@@ -285,23 +285,30 @@ onSnapshot(q, (snapshot) => {
     const data = doc.data();
 
     postsDiv.innerHTML += `
-      <div style="
-        background:white;
-        padding:15px;
-        margin:12px 0;
-        border-radius:10px;
-        box-shadow:0 2px 8px rgba(0,0,0,0.08);
-      ">
-        ${data.text}
-      </div>
-    `;
-  });
+  <div class="post-card">
 
-});
+    ${data.image ? `<img src="${data.image}" class="post-img">` : ""}
 
+    <div class="post-body">
+
+      ${data.title ? `<h3 class="post-title">${data.title}</h3>` : ""}
+
+      ${data.text ? `<p class="post-text">${data.text}</p>` : ""}
+
+      ${data.link && data.btnText ? `
+        <a href="${data.link}" target="_blank" class="post-btn">
+          ${data.btnText}
+        </a>
+      ` : ""}
+
+    </div>
+
+  </div>
+`;
 </script>
-  
+
   <script src="script.js"></script>
 </body>
 </html>
+
 
