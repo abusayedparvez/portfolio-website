@@ -7,140 +7,88 @@
 
 <body>
 
+<div class="admin-wrapper">
+
 <h2>Admin Login</h2>
 
-<input id="email" placeholder="Email"><br><br>
-<input id="password" type="password" placeholder="Password"><br><br>
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+
 <button onclick="login()">Login</button>
 
 <p id="msg"></p>
 
 <hr>
 
-<h3>Create Post</h3>
-
 <h3>Create New Post</h3>
 
-<!-- Title -->
-<input id="postTitle" placeholder="Title (e.g., New Certificate / New Video)" style="width:100%;padding:8px"><br><br>
+<input id="postTitle" placeholder="Title">
+<textarea id="postText" placeholder="Description"></textarea>
 
-<!-- Description -->
-<textarea id="postText" placeholder="Write description..." rows="4" style="width:100%;padding:8px"></textarea><br><br>
+<input id="postImage" type="file">
 
-<!-- Image Upload -->
-<label>Upload Image / Certificate / Thumbnail</label><br>
-<input id="postImage" type="file" accept="image/*"><br><br>
+<input id="postLink" placeholder="YouTube / website link">
 
-<!-- YouTube or Website Link -->
-<input id="postLink" placeholder="YouTube or website link (optional)" style="width:100%;padding:8px"><br><br>
-
-<!-- Button Text -->
-<select id="postBtnText" style="padding:6px">
+<select id="postBtnText">
   <option value="">No Button</option>
-  <option value="Watch">Watch</option>
-  <option value="View">View</option>
-  <option value="Open">Open</option>
-  <option value="Download">Download</option>
-</select><br><br>
+  <option>Watch</option>
+  <option>View</option>
+  <option>Open</option>
+</select>
 
-<button onclick="addPost()" style="padding:10px 18px;font-size:16px;">Post Now</button>
+<button onclick="addPost()">Post Now</button>
 
 <hr>
+
+<h3>Your Posts</h3>
+<div id="postList"></div>
+
+</div>
 
 
 <script type="module">
 
-/* ===== imports ===== */
+/* ===== IMPORTS ===== */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
-import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+import { getFirestore, addDoc, collection, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-storage.js";
-import { onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
-const storage = getStorage(app);
-
-/* ===== ADD POST ===== */
-window.addPost = async function () {
-
-  let imageUrl = "";
-  const file = postImage.files[0];
-
-  if(file){
-    const storageRef = ref(storage, "images/" + Date.now() + file.name);
-    await uploadBytes(storageRef, file);
-    imageUrl = await getDownloadURL(storageRef);
-  }
-
-  await addDoc(collection(db, "posts"), {
-    title: postTitle.value,
-    text: postText.value,
-    image: imageUrl,
-    link: postLink.value,
-    btnText: postBtnText.value,
-    time: Date.now()
-  });
-
-  alert("Post added!");
-}
 
 
-/* ===== SHOW + DELETE POSTS ===== */
-
-const postList = document.createElement("div");
-document.body.appendChild(postList);
-
-onSnapshot(collection(db, "posts"), (snapshot) => {
-
-  postList.innerHTML = "<h3>Your Posts</h3>";
-
-  snapshot.forEach((d) => {
-
-    const data = d.data();
-
-    postList.innerHTML += `
-      <div style="border:1px solid #ddd;padding:10px;margin:10px 0">
-        ${data.title || ""}
-        <button onclick="deletePost('${d.id}')" style="margin-left:10px;background:red;color:white;border:none;padding:5px 10px">
-          Delete
-        </button>
-      </div>
-    `;
-  });
-
-});
-
-
-window.deletePost = async function(id){
-  await deleteDoc(doc(db, "posts", id));
-}
-
-/* ===== config ===== */
+/* ===== CONFIG ===== */
 const firebaseConfig = {
   apiKey: "AIzaSyAjF6qnDJFFLD7h4tJ10e3z4BewCeai1e8",
   authDomain: "parvez-portfolio-64cdd.firebaseapp.com",
   projectId: "parvez-portfolio-64cdd",
   storageBucket: "parvez-portfolio-64cdd.firebasestorage.app",
   messagingSenderId: "17218030818",
-  appId: "1:17218030818:web:28da1deb8fcbb2396ce2bb",
-  measurementId: "G-DP7E5ESRN8"
+  appId: "1:17218030818:web:28da1deb8fcbb2396ce2bb"
 };
 
-/* ===== init ===== */
+
+/* ===== INIT ===== */
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-
-/* ===== login ===== */
-window.login = function () {
-  signInWithEmailAndPassword(auth, email.value, password.value)
-    .then(() => msg.innerText = "Login Successful ✅")
-    .catch(() => msg.innerText = "Wrong email/password ❌");
-}
-
-/* ===== post ===== */
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-storage.js";
-
 const storage = getStorage(app);
 
+
+/* ===== LOGIN ===== */
+window.login = function () {
+
+  signInWithEmailAndPassword(auth, email.value, password.value)
+    .then(() => {
+      msg.innerText = "Login Successful ✅";
+      msg.style.color = "green";
+    })
+    .catch(() => {
+      msg.innerText = "Wrong email/password ❌";
+      msg.style.color = "red";
+    });
+};
+
+
+/* ===== ADD POST ===== */
 window.addPost = async function () {
 
   let imageUrl = "";
@@ -163,13 +111,33 @@ window.addPost = async function () {
   });
 
   alert("Post added!");
+};
 
-  postTitle.value="";
-  postText.value="";
-  postImage.value="";
-  postLink.value="";
-  postBtnText.value="";
-}
+
+/* ===== SHOW + DELETE POSTS ===== */
+const postList = document.getElementById("postList");
+
+onSnapshot(collection(db, "posts"), (snapshot) => {
+
+  postList.innerHTML = "";
+
+  snapshot.forEach((d) => {
+
+    const data = d.data();
+
+    postList.innerHTML += `
+      <div style="margin:8px 0;padding:8px;border:1px solid #ddd;border-radius:6px;">
+        ${data.title || "Untitled"}
+        <button onclick="deletePost('${d.id}')" class="delete-btn">Delete</button>
+      </div>
+    `;
+  });
+});
+
+
+window.deletePost = async function(id){
+  await deleteDoc(doc(db, "posts", id));
+};
 
 </script>
 
