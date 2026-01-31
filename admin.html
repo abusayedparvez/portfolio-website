@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin Login</title>
+  <title>Admin Panel</title>
 </head>
+
 <body>
 
 <h2>Admin Login</h2>
 
 <input id="email" placeholder="Email"><br><br>
 <input id="password" type="password" placeholder="Password"><br><br>
-
 <button onclick="login()">Login</button>
 
 <p id="msg"></p>
 
+<hr>
+
+<h3>Create Post</h3>
+
+<textarea id="postText" placeholder="Write something..."></textarea><br><br>
+<button onclick="addPost()">Post</button>
+
 <script type="module">
 
+/* ===== imports ===== */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
 
+/* ===== config ===== */
 const firebaseConfig = {
   apiKey: "AIzaSyAjF6qnDJFFLD7h4tJ10e3z4BewCeai1e8",
   authDomain: "parvez-portfolio-64cdd.firebaseapp.com",
@@ -29,17 +39,28 @@ const firebaseConfig = {
   measurementId: "G-DP7E5ESRN8"
 };
 
+/* ===== init ===== */
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
+/* ===== login ===== */
 window.login = function () {
   signInWithEmailAndPassword(auth, email.value, password.value)
-    .then(() => {
-      msg.innerText = "Login Successful ✅";
-    })
-    .catch(() => {
-      msg.innerText = "Wrong email/password ❌";
-    });
+    .then(() => msg.innerText = "Login Successful ✅")
+    .catch(() => msg.innerText = "Wrong email/password ❌");
+}
+
+/* ===== post ===== */
+window.addPost = async function () {
+
+  await addDoc(collection(db, "posts"), {
+    text: postText.value,
+    time: Date.now()
+  });
+
+  alert("Post added!");
+  postText.value = "";
 }
 
 </script>
