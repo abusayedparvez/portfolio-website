@@ -284,10 +284,16 @@ onSnapshot(q, (snapshot) => {
   snapshot.forEach((doc) => {
     const data = doc.data();
 
-    postsDiv.innerHTML += `
+   function getYouTubeThumbnail(url){
+  if(!url) return "";
+  const id = url.split("v=")[1]?.split("&")[0] || url.split("/").pop();
+  return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+}
+
+postsDiv.innerHTML += `
   <div class="post-card">
 
-    ${data.image ? `<img src="${data.image}" class="post-img">` : ""}
+    ${data.link ? `<img src="${getYouTubeThumbnail(data.link)}" class="post-img">` : ""}
 
     <div class="post-body">
 
@@ -305,11 +311,13 @@ onSnapshot(q, (snapshot) => {
 
   </div>
 `;
+    
 </script>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
