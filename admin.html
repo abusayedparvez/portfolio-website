@@ -13,7 +13,6 @@
 
 <input id="email" placeholder="Email">
 <input id="password" type="password" placeholder="Password">
-
 <button onclick="login()">Login</button>
 
 <p id="msg"></p>
@@ -23,11 +22,10 @@
 <h3>Create New Post</h3>
 
 <input id="postTitle" placeholder="Title">
+
 <textarea id="postText" placeholder="Description"></textarea>
 
-<input id="postImage" type="file">
-
-<input id="postLink" placeholder="YouTube / website link">
+<input id="postLink" placeholder="YouTube link (optional)">
 
 <select id="postBtnText">
   <option value="">No Button</option>
@@ -48,14 +46,11 @@
 
 <script type="module">
 
-/* ===== IMPORTS ===== */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
 import { getFirestore, addDoc, collection, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-storage.js";
 
 
-/* ===== CONFIG ===== */
 const firebaseConfig = {
   apiKey: "AIzaSyAjF6qnDJFFLD7h4tJ10e3z4BewCeai1e8",
   authDomain: "parvez-portfolio-64cdd.firebaseapp.com",
@@ -65,46 +60,26 @@ const firebaseConfig = {
   appId: "1:17218030818:web:28da1deb8fcbb2396ce2bb"
 };
 
-
-/* ===== INIT ===== */
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const storage = getStorage(app);
 
 
 /* ===== LOGIN ===== */
 window.login = function () {
 
   signInWithEmailAndPassword(auth, email.value, password.value)
-    .then(() => {
-      msg.innerText = "Login Successful ✅";
-      msg.style.color = "green";
-    })
-    .catch(() => {
-      msg.innerText = "Wrong email/password ❌";
-      msg.style.color = "red";
-    });
+    .then(() => msg.innerText = "Login Successful ✅")
+    .catch(() => msg.innerText = "Wrong email/password ❌");
 };
 
 
 /* ===== ADD POST ===== */
 window.addPost = async function () {
 
-  let imageUrl = "";
-
-  const file = postImage.files[0];
-
-  if(file){
-    const storageRef = ref(storage, "images/" + Date.now() + file.name);
-    await uploadBytes(storageRef, file);
-    imageUrl = await getDownloadURL(storageRef);
-  }
-
   await addDoc(collection(db, "posts"), {
     title: postTitle.value,
     text: postText.value,
-    image: imageUrl,
     link: postLink.value,
     btnText: postBtnText.value,
     time: Date.now()
@@ -114,7 +89,7 @@ window.addPost = async function () {
 };
 
 
-/* ===== SHOW + DELETE POSTS ===== */
+/* ===== SHOW + DELETE ===== */
 const postList = document.getElementById("postList");
 
 onSnapshot(collection(db, "posts"), (snapshot) => {
@@ -126,14 +101,13 @@ onSnapshot(collection(db, "posts"), (snapshot) => {
     const data = d.data();
 
     postList.innerHTML += `
-      <div style="margin:8px 0;padding:8px;border:1px solid #ddd;border-radius:6px;">
+      <div style="margin:8px 0;">
         ${data.title || "Untitled"}
         <button onclick="deletePost('${d.id}')" class="delete-btn">Delete</button>
       </div>
     `;
   });
 });
-
 
 window.deletePost = async function(id){
   await deleteDoc(doc(db, "posts", id));
