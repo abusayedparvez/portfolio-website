@@ -438,5 +438,51 @@ a{
 .hero + .section{
   margin-top:40px;
 }
+/* =====================================================
+   HARD OVERRIDE FIX — CONTENT FORCE VISIBLE
+   (This WILL fix the blank page issue)
+===================================================== */
+
+/* 1. Force hero to end */
+.hero{
+  min-height: 70vh !important;
+  max-height: 70vh !important;
+}
+
+/* 2. Push content below hero */
+main{
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+}
+
+/* 3. Force ALL sections visible */
+section{
+  position: relative !important;
+  z-index: 5 !important;
+  background: #ffffff !important;
+  color: #1f2937 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* 4. Kill hero background overlap */
+.hero__background{
+  z-index: -1 !important;
+  pointer-events: none;
+}
+
+/* 5. Make cards readable no matter what */
+.card{
+  background: rgba(255,255,255,0.95) !important;
+  color: #1f2937 !important;
+}
+
+/* 6. Debug border (temporary – remove later) */
+section{
+  outline: 2px solid rgba(255,0,0,0.3);
+}
+
 
 
