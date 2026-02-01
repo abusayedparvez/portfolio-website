@@ -485,24 +485,23 @@ a{
     align-items: center;
   }
 }
-
-.hero__grid{
-  min-height:520px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
+/* Desktop only hero centering */
+@media (min-width: 901px) {
+  .hero__grid {
+    min-height: 520px;
+    align-items: center;
+  }
 }
 
-.hero__content{
-  padding-top:0;
-}
-/* ===== MOBILE FINAL FIX: only avatar moves ===== */
+/* ===== MOBILE: profile picture slightly up ===== */
 @media (max-width: 900px) {
   .hero__avatar {
     position: relative;
-    top: -16px;   /* 🔥 just a little up */
+    top: -14px;
   }
 }
+
+
 
 
 
