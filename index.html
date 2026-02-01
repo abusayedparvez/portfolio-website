@@ -3,340 +3,246 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>ABU SAYED PARVEZ | Portfolio</title>
-  <meta name="description" content="ABU SAYED PARVEZ — B.Pharm (PUST). Content creator & educator: Pharmacology, Health & Science explainers, University guides, Study tips, Money & Communication." />
-  <!-- TODO: আপনার লাইভ সাইটের ক্যানোনিকাল URL দিন -->
+
+  <meta name="description"
+    content="ABU SAYED PARVEZ — B.Pharm (PUST). Content creator & educator in Pharmacology, Health & Science." />
+
   <link rel="canonical" href="https://abusayedparvez.github.io/portfolio/" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="ABU SAYED PARVEZ | Portfolio" />
-  <meta property="og:description" content="Pharmacy student & content creator. Tutorials, explainers, guides & more." />
-  <meta property="og:url" content="https://abusayedparvez.github.io/portfolio/" />
-  <meta property="og:image" content="https://abusayedparvez.github.io/portfolio/profile-placeholder.jpg" />
+  <!-- 🔴 এখানে আপনার profile ছবি favicon হিসেবে ব্যবহার করতে পারেন -->
+  <!-- profile.jpg ফাইল root folder এ রাখুন -->
+  <link rel="icon" href="profile.jpg" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
-
- <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-BJT6L126FL"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-BJT6L126FL'); </script>
-
-  <!-- (Optional) Google Search Console verification meta এখানে দিতে পারেন -->
 </head>
+
 <body>
-  <div id="progressBar"></div>
-  <!-- ===== NAVBAR ===== -->
-  <header class="site-header" id="top">
-    <nav class="nav">
-     <a class="nav__logo" href="#hero">ABU SAYED PARVEZ</a>
-      <button class="nav__toggle">☰</button>
-      <button class="nav__toggle" aria-label="Toggle Menu" aria-expanded="false">
-        <span class="nav__bar"></span><span class="nav__bar"></span><span class="nav__bar"></span>
+
+<!-- ===== SCROLL PROGRESS BAR ===== -->
+<div id="progressBar"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="site-header">
+  <nav class="nav container">
+
+    <a href="#hero" class="nav__logo">ABU SAYED PARVEZ</a>
+
+    <!-- Mobile Hamburger -->
+    <button class="nav__toggle" aria-label="Toggle Menu" aria-expanded="false">
+      ☰
+    </button>
+
+    <div class="nav__menu">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#posts">Posts</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+
+      <a class="nav__cta" href="https://www.youtube.com/@ABUSAYEDPARVEZ" target="_blank" rel="noopener">
+        YouTube
+      </a>
+
+      <button id="themeToggle" class="theme-btn" aria-label="Toggle Theme">
+        🌙
       </button>
-      <div class="nav__menu" role="navigation">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#certs">Certificates</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-        <!-- TODO: চাইলে আপনার YouTube লিংক Navbar-এ দিন -->
-        <a class="nav__cta" href="https://www.youtube.com/@ABUSAYEDPARVEZ" target="_blank" rel="noopener">YouTube</a>
-        <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+
+  </nav>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section id="hero" class="hero">
+
+  <!-- 
+    🔴 Hero background পরিবর্তন করতে চাইলে:
+    style.css এর .hero section এ gradient / image পরিবর্তন করবেন
+    Bio-Tech / Medical vibe রাখবেন
+  -->
+
+  <div class="hero__background">
+    <!-- animated blobs / molecules CSS দিয়ে আসবে -->
+  </div>
+
+  <div class="container hero__grid">
+
+    <div class="hero__content reveal">
+      <h1>
+        Hi, I’m <span class="accent">ABU SAYED PARVEZ</span>
+      </h1>
+
+      <p class="hero__tagline">
+        Bachelor of Pharmacy Professional (PUST) ·
+        Content Creator · Health & Science Educator
+      </p>
+
+      <div class="hero__cta">
+        <a href="#projects" class="btn">Explore Projects</a>
+        <a href="#contact" class="btn btn--ghost">Contact Me</a>
       </div>
-    </nav>
-  </header>
+    </div>
 
-  <main>
-    <!-- ===== HERO ===== -->
-    <section id="hero" class="section hero">
-      <div class="container hero__grid">
-        <div class="hero__content reveal">
-          <h1>Hi, I’m <span class="accent">ABU SAYED PARVEZ</span></h1>
-          <p class="hero__tagline">
-            Bachelor of Pharmacy Professional (PUST) · Content Creator · YouTuber · Health & Science Explainer
-          </p>
-          <div class="hero__cta">
-            <a class="btn" href="#projects">Explore Projects</a>
-            <a class="btn btn--ghost" href="#contact">Contact Me</a>
-          </div>
-        </div>
-        <div class="hero__media reveal">
-          <img src="profile-placeholder.jpg" alt="ABU SAYED PARVEZ" class="hero__avatar" />
-        </div>
-      </div>
-    </section>
+    <div class="hero__media reveal">
+      <!-- 
+        🔴 এখানে আপনার profile ছবি পরিবর্তন করুন
+        Square / Portrait যেকোনো ছবি দিলেও CSS দিয়ে circular / glass effect হবে
+      -->
+      <img src="profile.jpg" alt="ABU SAYED PARVEZ" class="hero__avatar" />
+    </div>
 
-    <!-- ===== ABOUT ===== -->
-    <section id="about" class="section section--alt">
-      <div class="container grid-2">
-        <div class="reveal">
-          <img src="about-placeholder.jpg" alt="About Parvez" class="card__img" />
-        </div>
-        <div class="reveal">
-          <h2>About Me</h2>
-          <p>
-            I am <strong>ABU SAYED PARVEZ</strong>, a highly motivated and curious B.Pharm student at
-            <strong>Pabna University of Science and Technology (PUST)</strong>. I create educational content on
-            Medicine & Pharmacology, Health & Science, University guides, Study tips, Money management, and Communication.
-          </p>
-          <p>
-            Leadership & community: General Secretary – <strong>Arshinagar (PUST)</strong>, Vice President – <strong>Jonaki (PUST)</strong>,
-            Joint General Secretary – <strong>Pharmacy Association (PUST)</strong>. I anchor programs, organize events,
-            volunteer actively, and guide students through my YouTube channel.
-          </p>
-          <ul class="badges">
-            <li class="badge">Research-focused</li>
-            <li class="badge">Public Speaking</li>
-            <li class="badge">Video & Graphic Design</li>
-            <li class="badge">Critical Thinking</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SKILLS ===== -->
-    <section id="skills" class="section">
-      <div class="container">
-        <h2 class="reveal">Skills</h2>
-        <p class="section__sub reveal">A mix of academic, creative, leadership & technical skills.</p>
-        <div class="cards grid-auto reveal">
-          <div class="card"><h3>Medicine & Pharmacology Tutorials</h3></div>
-          <div class="card"><h3>Health & Science Explainers</h3></div>
-          <div class="card"><h3>University Guides & Study Tips</h3></div>
-          <div class="card"><h3>Money Management & Communication</h3></div>
-          <div class="card"><h3>Leadership & Event Management</h3></div>
-          <div class="card"><h3>Critical Thinking & Problem Solving</h3></div>
-          <div class="card"><h3>Research & Analytical Skills</h3></div>
-          <div class="card"><h3>Video Editing & Graphic Design</h3></div>
-          <div class="card"><h3>Public Speaking & Anchoring</h3></div>
-          <div class="card"><h3>Technical: Car Driving, Solar Setup, Food & Beverage Service</h3></div>
-          <div class="card"><h3>Teamwork & Collaboration</h3></div>
-          <div class="card"><h3>Artificial Intelligence</h3>
-              <p>Experienced in using Generative AI tools and knowledgeable in differentiating traditional AI from modern approaches.</p></div>
-          <div class="card"><h3>MS Office</h3></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects" class="section section--alt">
-      <div class="container">
-        <h2 class="reveal">Projects</h2>
-        <p class="section__sub reveal">YouTube videos, articles & other works.</p>
-
-        <div class="cards grid-auto reveal">
-          <article class="card card--project">
-            <img src="youtube-placeholder.jpg" alt="Pharmacology Video" class="card__img" />
-            <div class="card__body">
-              <h3>Pharmacology Explainer</h3>
-              <p>Explaining complex pharmacology topics in simple language for students.</p>
-              <!-- TODO: আপনার ভিডিও/প্লেলিস্ট লিংক দিন -->
-              <a class="btn btn--sm" href="https://www.youtube.com/@ABUSAYEDPARVEZ" target="_blank" rel="noopener">Watch</a>
-            </div>
-          </article>
-
-          <article class="card card--project">
-            <img src="graphic-placeholder.jpg" alt="Graphic Design" class="card__img" />
-            <div class="card__body">
-              <h3>Graphics for Education</h3>
-              <p>Visuals that make science topics easier and engaging.</p>
-              <a class="btn btn--sm" href="#" target="_blank" rel="noopener">View</a>
-            </div>
-          </article>
-
-          <article class="card card--project">
-            <img src="project-placeholder.jpg" alt="Study Tips" class="card__img" />
-            <div class="card__body">
-              <h3>Science and Reality Playlist </h3>
-              <p>Actual Fact of Science.</p>
-              <a class="btn btn--sm" href="#" target="_blank" rel="noopener">Read</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-<!-- ===== POSTS ===== -->
-<section class="section section--alt">
-  <div class="container">
-    <h2>Latest Posts</h2>
-    <div id="posts"></div>
   </div>
 </section>
-    <!-- ===== CERTIFICATES ===== -->
-    <section id="certs" class="section">
-      <div class="container">
-        <h2 class="reveal">Certificates</h2>
-        <p class="section__sub reveal">Selected courses & trainings (Coursera & others).</p>
-        <div class="cards grid-auto reveal">
-          <article class="card">
-            <h3>Critical Thinking</h3>
-            <p>Coursera — Completed</p>
-            <!-- TODO: সার্টিফিকেট লিংক থাকলে দিন -->
-            <a class="link" href="https://www.coursera.org/account/accomplishments/verify/NQHAR4GFKXAO" target="_blank" rel="noopener">View Certificate</a>
-            <h3>Understanding Research Methods</h3>
-            <p>Coursera — Completed</p>
-            <a class="link" href="https://www.coursera.org/account/accomplishments/verify/2I8PE4V2BT1Q" target="_blank" rel="noopener">View Certificate</a>
-            <h3>Writing in Science</h3>
-            <p>Coursera — Completed</p>
-            <a class="link" href="https://www.coursera.org/account/accomplishments/verify/9UKP0UAXVB6D" target="_blank" rel="noopener">View Certificate</a>
 
-          </article>
-          <article class="card">
-            <h3>Solar Electricity Setup</h3>
-            <p>Hands-on training</p>
-          </article>
-          <article class="card">
-            <h3>Food & Beverage Service</h3>
-            <p>Ongoing training</p>
-          </article>
-          <article class="card">
-            <h3>Industrial Training</h3>
-            <p>Popular Pharmaceutical PLC — Intern</p>
-          </article>
-        </div>
-      </div>
-    </section>
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section section--alt">
+  <div class="container grid-2">
 
-    <!-- ===== EDUCATION ===== -->
-    <section id="education" class="section section--alt">
-      <div class="container">
-        <h2 class="reveal">Education</h2>
-        <div class="card reveal">
-          <h3>Bachelor of Pharmacy Professional(B.Pharm Professional)</h3>
-          <p>Pabna University of Science and Technology (PUST)</p>
-          <p class="bio">
-            I am <strong>ABU SAYED PARVEZ</strong>, a highly motivated and curious B.Pharm student at PUST.
-            Alongside academics, I create content on Medicine & Pharmacology, Health & Science, University guides,
-            Study tips, Money management and Communication. Leadership roles include General Secretary (Arshinagar),
-            Vice President (Jonaki), and Joint General Secretary (Pharmacy Association, PUST). I anchor programs,
-            organize events, volunteer actively, and guide learners on YouTube.
-          </p>
-        </div>
-      </div>
-    </section>
-    
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="section">
-      <div class="container grid-2">
-        <div class="reveal">
-          <h2>Contact</h2>
-          <form class="contact__form" id="contactForm">
-            <!-- TODO: placeholder-এ নিজের নাম/ইমেইল বসাতে পারো -->
-            <input type="text" name="name" placeholder="Your Name (e.g., ABU SAYED PARVEZ)" required />
-            <input type="email" name="email" placeholder="Your Email (e.g., parvez@example.com)" required />
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-          </form>
-          <p class="muted">* This form shows a success message only (no backend). Add Formspree/Google Forms later if you want.</p>
-        </div>
-        <div class="contact__cards reveal">
-          <div class="card">
-            <h3>Social</h3>
-            <p>
-              <!-- TODO: আপনার লিংকগুলো দিন -->
-              <a class="link" href="https://www.youtube.com/@ABUSAYEDPARVEZ" target="_blank" rel="noopener">YouTube</a> ·
-              <a class="link" href="https://www.linkedin.com/in/md-abu-sayed-parvez2000" target="_blank" rel="noopener">LinkedIn</a> ·
-              <a class="link" href="https://www.researchgate.net/profile/Md-Abu-Sayed-Parvez" target="_blank" rel="noopener">ResearchGate</a> .
-              <a class="link" href="https://www.facebook.com/share/19b5zPNKir/" target="_blank" rel="noopener">Facebook</a>.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Email</h3>
-            <!-- TODO: আপনার ইমেইল দিন -->
-            <a class="link" href="parvez201313@gmail.com">parvez201313@gmail.com</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container footer__grid">
-      <p>© <span id="year"></span> ABU SAYED PARVEZ. All rights reserved.</p>
-      <a class="link" href="https://abusayedparvez.github.io/portfolio/" target="_blank" rel="noopener">Back to top ↑</a>
+    <div class="reveal">
+      <!-- 🔴 About section এর image এখানে পরিবর্তন করুন -->
+      <img src="about.jpg" alt="About image" class="about__img" />
     </div>
-  </footer>
-<script type="module">
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
-import { getFirestore, collection, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+    <div class="reveal">
+      <h2>About Me</h2>
 
+      <p class="long-text">
+        I am <strong>ABU SAYED PARVEZ</strong>, a highly motivated B.Pharm student
+        at Pabna University of Science and Technology (PUST).
+        I create educational content on Pharmacology, Health & Science,
+        University guides, Study tips, Money management and Communication.
+      </p>
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAjF6qnDJFFLD7h4tJ10e3z4BewCeai1e8",
-  authDomain: "parvez-portfolio-64cdd.firebaseapp.com",
-  projectId: "parvez-portfolio-64cdd",
-  storageBucket: "parvez-portfolio-64cdd.firebasestorage.app",
-  messagingSenderId: "17218030818",
-  appId: "1:17218030818:web:28da1deb8fcbb2396ce2bb"
-};
+      <p class="long-text">
+        I am actively involved in leadership, public speaking, event management,
+        and student mentoring through organizations and my YouTube channel.
+      </p>
+    </div>
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+  </div>
+</section>
 
-const postsDiv = document.getElementById("posts");
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="section">
+  <div class="container">
+    <h2 class="reveal">Skills</h2>
 
+    <div class="cards grid-auto reveal">
+      <div class="card">Pharmacology & Medicine Tutorials</div>
+      <div class="card">Health & Science Communication</div>
+      <div class="card">Research & Critical Thinking</div>
+      <div class="card">Public Speaking & Anchoring</div>
+      <div class="card">Leadership & Event Management</div>
+      <div class="card">Video Editing & Graphic Design</div>
+      <div class="card">Artificial Intelligence (Applied)</div>
+    </div>
+  </div>
+</section>
 
-/* ===== YouTube thumbnail ===== */
-function getThumbnail(url){
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section section--alt">
+  <div class="container">
+    <h2 class="reveal">Projects</h2>
 
-  if(!url) return "";
+    <div class="cards grid-auto reveal">
 
-  let id = "";
-
-  if(url.includes("youtu.be/")){
-    id = url.split("youtu.be/")[1].split("?")[0];
-  }
-  else if(url.includes("v=")){
-    id = url.split("v=")[1].split("&")[0];
-  }
-
-  return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
-}
-
-/* ===== load posts ===== */
-const q = query(collection(db,"posts"), orderBy("time","desc"));
-
-onSnapshot(q,(snapshot)=>{
-
-  postsDiv.innerHTML="";
-
-  snapshot.forEach(doc=>{
-
-    const data = doc.data();
-
-    postsDiv.innerHTML += `
-      <div class="post-card">
-
-        ${data.link ? `<img src="${getThumbnail(data.link)}" class="post-img">` : ""}
-
-        <div class="post-body">
-          ${data.title ? `<h3 class="post-title">${data.title}</h3>` : ""}
-          ${data.text ? `<p class="post-text">${data.text}</p>` : ""}
-          ${data.link && data.btnText ? `<a href="${data.link}" target="_blank" class="post-btn">${data.btnText}</a>` : ""}
+      <article class="card card--project">
+        <div class="media">
+          <!-- 🔴 Project thumbnail পরিবর্তন করুন (16:9 image recommended) -->
+          <img src="project1.jpg" alt="Project thumbnail" />
         </div>
 
+        <h3>Pharmacology Explainer</h3>
+        <p class="long-text">
+          Simplifying complex pharmacology concepts for students.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= POSTS (Firebase) ================= -->
+<section id="posts" class="section">
+  <div class="container">
+    <h2>Latest Posts</h2>
+
+    <!-- ⚠️ Firebase Firestore real-time posts এখানে inject হবে -->
+    <!-- CSS Grid (Desktop 4 / Mobile 2) style.css এ করা হবে -->
+    <div id="postsGrid"></div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section id="education" class="section section--alt">
+  <div class="container">
+    <h2 class="reveal">Education</h2>
+
+    <div class="card reveal">
+      <h3>Bachelor of Pharmacy Professional (B.Pharm)</h3>
+      <p>Pabna University of Science and Technology (PUST)</p>
+
+      <p class="long-text">
+        Alongside academics, I actively engage in content creation,
+        leadership roles, student mentoring, and science communication.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section">
+  <div class="container grid-2">
+
+    <div class="reveal">
+      <h2>Contact</h2>
+
+      <a href="https://wa.me/8801842427494" target="_blank" class="btn">
+        WhatsApp
+      </a>
+
+      <a href="mailto:parvez201313@gmail.com" class="btn btn--ghost">
+        Email
+      </a>
+    </div>
+
+    <div class="reveal">
+      <div class="card">
+        <h3>Social Links</h3>
+        <p>
+          <a href="https://www.youtube.com/@ABUSAYEDPARVEZ" target="_blank">YouTube</a> ·
+          <a href="https://www.linkedin.com/in/md-abu-sayed-parvez2000" target="_blank">LinkedIn</a> ·
+          <a href="https://www.researchgate.net/profile/Md-Abu-Sayed-Parvez" target="_blank">ResearchGate</a>
+        </p>
       </div>
-    `;
-  });
+    </div>
 
-});
+  </div>
+</section>
 
-</script>
+</main>
 
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>
+    Live Visitors: <span id="visitorCount">0</span>
+  </p>
 
-  <script src="script.js"></script>
+  <p>
+    © <span id="year"></span> ABU SAYED PARVEZ
+  </p>
+</footer>
+
+<!-- ================= FIREBASE + MAIN SCRIPT ================= -->
+<script type="module" src="script.js"></script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
