@@ -478,9 +478,12 @@ a{
   }
 }
 /* ===== HERO DESKTOP ALIGNMENT FIX ===== */
-.hero{
-  display:flex;
-  align-items:center;
+/* Desktop only hero centering */
+@media (min-width: 901px) {
+  .hero__grid {
+    min-height: 520px;
+    align-items: center;
+  }
 }
 
 .hero__grid{
@@ -499,6 +502,7 @@ a{
     transform: translateY(-12px); /* 🔥 just a little up */
   }
 }
+
 
 
 
