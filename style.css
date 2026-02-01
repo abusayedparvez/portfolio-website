@@ -493,6 +493,13 @@ a{
 .hero__content{
   padding-top:0;
 }
+/* ===== Mobile: profile picture slightly up (SAFE) ===== */
+@media (max-width: 900px) {
+  .hero__media {
+    transform: translateY(-12px); /* 🔥 just a little up */
+  }
+}
+
 
 
 
