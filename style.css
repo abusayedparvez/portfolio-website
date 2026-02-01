@@ -493,25 +493,7 @@ a{
 .hero__content{
   padding-top:0;
 }
-@media(max-width:900px){
 
-  .hero__grid{
-    text-align:center;
-  }
-
-  .hero__media{
-    margin-top:-35px;   /* 🔥 profile pic up */
-  }
-
-  .hero__content{
-    margin-top:10px;    /* text slight down */
-  }
-
-  .hero__avatar{
-    width:220px;
-    height:220px;
-  }
-}
 
 
 
