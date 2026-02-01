@@ -404,4 +404,39 @@ a{
 .btn i{
   margin-right:6px;
 }
+/* =====================================================
+   VISIBILITY & LAYOUT FIX (IMPORTANT)
+===================================================== */
+
+/* 1️⃣ Hero height control */
+.hero{
+  min-height:80vh;   /* আগে implicit full height ছিল */
+}
+
+/* 2️⃣ Ensure sections are visible below hero */
+.section{
+  position:relative;
+  z-index:1;
+  background:var(--lab-white);
+  color:var(--text-dark);
+}
+
+/* 3️⃣ Alt section fix */
+.section--alt{
+  background:#ffffff;
+  color:var(--text-dark);
+}
+
+/* 4️⃣ Card visibility on white background */
+.section .card,
+.section--alt .card{
+  background:rgba(255,255,255,0.85); /* glass + readable */
+  backdrop-filter:blur(14px);
+}
+
+/* 5️⃣ Prevent hero gradient overlap */
+.hero + .section{
+  margin-top:40px;
+}
+
 
