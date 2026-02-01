@@ -496,12 +496,14 @@ a{
 .hero__content{
   padding-top:0;
 }
-/* ===== Mobile: profile picture slightly up (SAFE) ===== */
+/* ===== MOBILE FINAL FIX: only avatar moves ===== */
 @media (max-width: 900px) {
-  .hero__media {
-    transform: translateY(-12px); /* 🔥 just a little up */
+  .hero__avatar {
+    position: relative;
+    top: -16px;   /* 🔥 just a little up */
   }
 }
+
 
 
 
