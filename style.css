@@ -477,5 +477,41 @@ a{
     padding: 12px;
   }
 }
+/* ===== HERO DESKTOP ALIGNMENT FIX ===== */
+.hero{
+  display:flex;
+  align-items:center;
+}
+
+.hero__grid{
+  min-height:520px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+}
+
+.hero__content{
+  padding-top:0;
+}
+@media(max-width:900px){
+
+  .hero__grid{
+    text-align:center;
+  }
+
+  .hero__media{
+    margin-top:-35px;   /* 🔥 profile pic up */
+  }
+
+  .hero__content{
+    margin-top:10px;    /* text slight down */
+  }
+
+  .hero__avatar{
+    width:220px;
+    height:220px;
+  }
+}
+
 
 
