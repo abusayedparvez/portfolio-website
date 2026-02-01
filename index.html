@@ -7,15 +7,20 @@
   <title>ABU SAYED PARVEZ | Portfolio</title>
 
   <meta name="description"
-    content="ABU SAYED PARVEZ — B.Pharm (PUST). Content creator & educator in Pharmacology, Health & Science." />
+        content="ABU SAYED PARVEZ — B.Pharm (PUST). Content creator & educator in Pharmacology, Health & Science." />
 
   <link rel="canonical" href="https://abusayedparvez.github.io/portfolio/" />
 
-  <!-- 🔴 favicon হিসেবে profile ছবি -->
+  <!-- Favicon -->
   <link rel="icon" href="images/profile.jpg" />
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons (IMPORTANT) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" />
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
@@ -23,18 +28,15 @@
 
 <body>
 
-<!-- ===== Scroll Progress Bar ===== -->
 <div id="progressBar"></div>
 
-<!-- ==================================================
-   NAVBAR
-================================================== -->
+<!-- ================= NAVBAR ================= -->
 <header class="site-header">
   <nav class="nav container">
 
     <a href="#hero" class="nav__logo">ABU SAYED PARVEZ</a>
 
-    <button class="nav__toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+    <button class="nav__toggle" aria-label="Toggle Menu">☰</button>
 
     <div class="nav__menu">
       <a href="#about">About</a>
@@ -45,11 +47,11 @@
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
 
-      <a class="nav__cta" href="https://www.youtube.com/@ABUSAYEDPARVEZ" target="_blank" rel="noopener">
-        YouTube
+      <a class="nav__cta"
+         href="https://www.youtube.com/@ABUSAYEDPARVEZ"
+         target="_blank">
+        <i class="fa-brands fa-youtube"></i> YouTube
       </a>
-
-      <button id="themeToggle" class="theme-btn" aria-label="Toggle Theme">🌙</button>
     </div>
 
   </nav>
@@ -57,9 +59,7 @@
 
 <main>
 
-<!-- ==================================================
-   HERO
-================================================== -->
+<!-- ================= HERO ================= -->
 <section id="hero" class="hero">
   <div class="hero__background"></div>
 
@@ -80,7 +80,6 @@
     </div>
 
     <div class="hero__media reveal">
-      <!-- 🔴 Profile picture -->
       <img src="images/profile.jpg"
            alt="ABU SAYED PARVEZ Profile Picture"
            class="hero__avatar">
@@ -89,14 +88,11 @@
   </div>
 </section>
 
-<!-- ==================================================
-   ABOUT
-================================================== -->
+<!-- ================= ABOUT ================= -->
 <section id="about" class="section section--alt">
   <div class="container grid-2">
 
     <div class="reveal">
-      <!-- 🔴 About image -->
       <img src="images/about.jpg"
            alt="About ABU SAYED PARVEZ"
            class="about__img">
@@ -123,9 +119,7 @@
   </div>
 </section>
 
-<!-- ==================================================
-   SKILLS
-================================================== -->
+<!-- ================= SKILLS ================= -->
 <section id="skills" class="section">
   <div class="container">
     <h2 class="reveal">Skills</h2>
@@ -134,18 +128,16 @@
       <div class="card">Medicine & Pharmacology Tutorials</div>
       <div class="card">Health & Science Explainers</div>
       <div class="card">University Guides & Study Tips</div>
-      <div class="card">Money Management & Communication</div>
+      <div class="card">Communication</div>
       <div class="card">Leadership & Event Management</div>
       <div class="card">Public Speaking & Anchoring</div>
       <div class="card">Video Editing & Graphic Design</div>
-      <div class="card">Artificial Intelligence (Applied)</div>
+      <div class="card">Artificial Intelligence</div>
     </div>
   </div>
 </section>
 
-<!-- ==================================================
-   PROJECTS
-================================================== -->
+<!-- ================= PROJECTS ================= -->
 <section id="projects" class="section section--alt">
   <div class="container">
     <h2 class="reveal">Projects</h2>
@@ -157,11 +149,10 @@
           <img src="images/youtube-placeholder.jpg" alt="Pharmacology Explainer">
         </div>
         <h3>Pharmacology Explainer</h3>
-        <p class="long-text">
-          Explaining complex pharmacology topics in simple language.
-        </p>
-        <a href="https://www.youtube.com/@ABUSAYEDPARVEZ"
-           target="_blank" class="btn btn--sm">Watch</a>
+        <p class="long-text">Explaining complex pharmacology topics.</p>
+        <a href="https://www.youtube.com/@ABUSAYEDPARVEZ" target="_blank" class="btn btn--sm">
+          <i class="fa-brands fa-youtube"></i> Watch
+        </a>
       </article>
 
       <article class="card card--project">
@@ -184,9 +175,7 @@
   </div>
 </section>
 
-<!-- ==================================================
-   POSTS (Firebase)
-================================================== -->
+<!-- ================= POSTS ================= -->
 <section id="posts" class="section">
   <div class="container">
     <h2>Latest Posts</h2>
@@ -194,9 +183,7 @@
   </div>
 </section>
 
-<!-- ==================================================
-   CERTIFICATES
-================================================== -->
+<!-- ================= CERTIFICATES ================= -->
 <section id="certificates" class="section section--alt">
   <div class="container">
     <h2 class="reveal">Certificates</h2>
@@ -207,21 +194,27 @@
         <h3>Critical Thinking</h3>
         <p>Coursera — Completed</p>
         <a href="https://www.coursera.org/account/accomplishments/verify/NQHAR4GFKXAO"
-           target="_blank">View Certificate</a>
+           target="_blank">
+          <i class="fa-solid fa-certificate"></i> View Certificate
+        </a>
       </div>
 
       <div class="card">
         <h3>Understanding Research Methods</h3>
         <p>Coursera — Completed</p>
         <a href="https://www.coursera.org/account/accomplishments/verify/2I8PE4V2BT1Q"
-           target="_blank">View Certificate</a>
+           target="_blank">
+          <i class="fa-solid fa-certificate"></i> View Certificate
+        </a>
       </div>
 
       <div class="card">
         <h3>Writing in Science</h3>
         <p>Coursera — Completed</p>
         <a href="https://www.coursera.org/account/accomplishments/verify/9UKP0UAXVB6D"
-           target="_blank">View Certificate</a>
+           target="_blank">
+          <i class="fa-solid fa-certificate"></i> View Certificate
+        </a>
       </div>
 
       <div class="card">
@@ -243,9 +236,7 @@
   </div>
 </section>
 
-<!-- ==================================================
-   EDUCATION
-================================================== -->
+<!-- ================= EDUCATION ================= -->
 <section id="education" class="section">
   <div class="container">
     <h2 class="reveal">Education</h2>
@@ -257,26 +248,45 @@
   </div>
 </section>
 
-<!-- ==================================================
-   CONTACT
-================================================== -->
+<!-- ================= CONTACT ================= -->
 <section id="contact" class="section section--alt">
   <div class="container grid-2">
 
     <div class="reveal">
       <h2>Contact</h2>
-      <a href="https://wa.me/8801842427494" target="_blank" class="btn">WhatsApp</a>
-      <a href="mailto:parvez201313@gmail.com" class="btn btn--ghost">Email</a>
+
+      <a href="https://wa.me/8801842427494"
+         target="_blank"
+         class="btn">
+        <i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> WhatsApp
+      </a>
+
+      <a href="mailto:parvez201313@gmail.com"
+         class="btn btn--ghost">
+        <i class="fa-solid fa-envelope"></i> Email
+      </a>
     </div>
 
     <div class="reveal">
       <div class="card">
         <h3>Social Links</h3>
-        <p>
-          <a href="https://www.youtube.com/@ABUSAYEDPARVEZ" target="_blank">YouTube</a> ·
-          <a href="https://www.linkedin.com/in/md-abu-sayed-parvez2000" target="_blank">LinkedIn</a> ·
-          <a href="https://www.researchgate.net/profile/Md-Abu-Sayed-Parvez" target="_blank">ResearchGate</a> ·
-          <a href="https://www.facebook.com/share/19b5zPNKir/" target="_blank">Facebook</a>
+
+        <p class="social-links">
+          <a href="https://www.youtube.com/@ABUSAYEDPARVEZ" target="_blank">
+            <i class="fa-brands fa-youtube"></i> YouTube
+          </a>
+
+          <a href="https://www.linkedin.com/in/md-abu-sayed-parvez2000" target="_blank">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+
+          <a href="https://www.researchgate.net/profile/Md-Abu-Sayed-Parvez" target="_blank">
+            <i class="fa-brands fa-researchgate"></i> ResearchGate
+          </a>
+
+          <a href="https://www.facebook.com/share/19b5zPNKir/" target="_blank">
+            <i class="fa-brands fa-facebook"></i> Facebook
+          </a>
         </p>
       </div>
     </div>
@@ -286,23 +296,11 @@
 
 </main>
 
-<!-- ==================================================
-   FOOTER (Professional Viewer Stats)
-================================================== -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
-  <div class="viewer-stats">
-    <p>👁 Today’s Views: <span id="todayViews">0</span></p>
-    <p>👥 Live Visitors: <span id="liveVisitors">1</span></p>
-    <p>📊 Total Profile Views: <span id="totalViews">0</span></p>
-  </div>
-
   <p>© <span id="year"></span> ABU SAYED PARVEZ</p>
 </footer>
 
-<!-- ==================================================
-   MAIN SCRIPT
-================================================== -->
 <script type="module" src="script.js"></script>
-
 </body>
 </html>
