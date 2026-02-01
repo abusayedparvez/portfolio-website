@@ -3,40 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>ABU SAYED PARVEZ | Portfolio</title>
 
   <meta name="description"
-        content="ABU SAYED PARVEZ — B.Pharm (PUST). Content creator & educator in Pharmacology, Health & Science." />
-
-  <link rel="canonical" href="https://abusayedparvez.github.io/portfolio/" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="images/profile.jpg" />
+    content="ABU SAYED PARVEZ — B.Pharm (PUST). Content creator & educator: Pharmacology, Health & Science." />
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome Icons (IMPORTANT) -->
+  <!-- Font Awesome -->
   <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        crossorigin="anonymous" />
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Main CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- ===== Scroll Progress ===== -->
 <div id="progressBar"></div>
 
 <!-- ================= NAVBAR ================= -->
-<header class="site-header">
+<header class="site-header" id="top">
   <nav class="nav container">
 
     <a href="#hero" class="nav__logo">ABU SAYED PARVEZ</a>
 
-    <button class="nav__toggle" aria-label="Toggle Menu">☰</button>
+    <button class="nav__toggle" aria-label="Toggle Menu">
+      <span></span><span></span><span></span>
+    </button>
 
     <div class="nav__menu">
       <a href="#about">About</a>
@@ -66,7 +62,9 @@
   <div class="container hero__grid">
 
     <div class="hero__content reveal">
-      <h1>Hi, I’m <span class="accent">ABU SAYED PARVEZ</span></h1>
+      <h1>
+        Hi, I’m <span class="accent">ABU SAYED PARVEZ</span>
+      </h1>
 
       <p class="hero__tagline">
         Bachelor of Pharmacy Professional (PUST) ·
@@ -74,14 +72,18 @@
       </p>
 
       <div class="hero__cta">
-        <a href="#projects" class="btn">Explore Projects</a>
-        <a href="#contact" class="btn btn--ghost">Contact Me</a>
+        <a href="#projects" class="btn">
+          <i class="fa-solid fa-flask"></i> Explore Projects
+        </a>
+        <a href="#contact" class="btn btn--ghost">
+          <i class="fa-solid fa-paper-plane"></i> Contact Me
+        </a>
       </div>
     </div>
 
     <div class="hero__media reveal">
       <img src="images/profile.jpg"
-           alt="ABU SAYED PARVEZ Profile Picture"
+           alt="ABU SAYED PARVEZ"
            class="hero__avatar">
     </div>
 
@@ -106,13 +108,13 @@
         B.Pharm student at Pabna University of Science and Technology (PUST).
         I create educational content on Medicine & Pharmacology,
         Health & Science, University guides, Study tips,
-        Money management and Communication.
+        Money management, and Communication.
       </p>
 
       <p class="long-text">
-        Leadership roles include General Secretary (Arshinagar – PUST),
-        Vice President (Jonaki – PUST),
-        and Joint General Secretary (Pharmacy Association – PUST).
+        Leadership roles include General Secretary – Arshinagar (PUST),
+        Vice President – Jonaki (PUST),
+        and Joint General Secretary – Pharmacy Association (PUST).
       </p>
     </div>
 
@@ -128,11 +130,11 @@
       <div class="card">Medicine & Pharmacology Tutorials</div>
       <div class="card">Health & Science Explainers</div>
       <div class="card">University Guides & Study Tips</div>
-      <div class="card">Communication</div>
+      <div class="card">Money Management & Communication</div>
       <div class="card">Leadership & Event Management</div>
       <div class="card">Public Speaking & Anchoring</div>
       <div class="card">Video Editing & Graphic Design</div>
-      <div class="card">Artificial Intelligence</div>
+      <div class="card">Artificial Intelligence (Applied)</div>
     </div>
   </div>
 </section>
@@ -149,8 +151,11 @@
           <img src="images/youtube-placeholder.jpg" alt="Pharmacology Explainer">
         </div>
         <h3>Pharmacology Explainer</h3>
-        <p class="long-text">Explaining complex pharmacology topics.</p>
-        <a href="https://www.youtube.com/@ABUSAYEDPARVEZ" target="_blank" class="btn btn--sm">
+        <p class="long-text">
+          Explaining complex pharmacology topics in simple language.
+        </p>
+        <a href="https://www.youtube.com/@ABUSAYEDPARVEZ"
+           target="_blank" class="btn btn--sm">
           <i class="fa-brands fa-youtube"></i> Watch
         </a>
       </article>
@@ -159,8 +164,10 @@
         <div class="media">
           <img src="images/graphic-placeholder.jpg" alt="Educational Graphics">
         </div>
-        <h3>Educational Graphics</h3>
-        <p class="long-text">Science visuals for better understanding.</p>
+        <h3>Graphics for Education</h3>
+        <p class="long-text">
+          Visuals that make science topics easier and engaging.
+        </p>
       </article>
 
       <article class="card card--project">
@@ -168,17 +175,21 @@
           <img src="images/project-placeholder.jpg" alt="Science & Reality">
         </div>
         <h3>Science & Reality Playlist</h3>
-        <p class="long-text">Actual facts of science explained.</p>
+        <p class="long-text">
+          Actual facts of science explained clearly.
+        </p>
       </article>
 
     </div>
   </div>
 </section>
 
-<!-- ================= POSTS ================= -->
+<!-- ================= POSTS (Firebase Required) ================= -->
 <section id="posts" class="section">
   <div class="container">
     <h2>Latest Posts</h2>
+
+    <!-- 🔴 Firebase real-time posts will render here -->
     <div id="postsGrid"></div>
   </div>
 </section>
@@ -218,6 +229,11 @@
       </div>
 
       <div class="card">
+        <h3>Industrial Training</h3>
+        <p>Popular Pharmaceuticals PLC — Intern</p>
+      </div>
+
+      <div class="card">
         <h3>Solar Electricity Setup</h3>
         <p>Hands-on Technical Training</p>
       </div>
@@ -225,11 +241,6 @@
       <div class="card">
         <h3>Food & Beverage Service</h3>
         <p>Professional Training (Ongoing)</p>
-      </div>
-
-      <div class="card">
-        <h3>Industrial Training</h3>
-        <p>Popular Pharmaceuticals PLC — Intern</p>
       </div>
 
     </div>
@@ -256,9 +267,8 @@
       <h2>Contact</h2>
 
       <a href="https://wa.me/8801842427494"
-         target="_blank"
-         class="btn">
-        <i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> WhatsApp
+         target="_blank" class="btn">
+        <i class="fa-brands fa-whatsapp" style="color:#25D366"></i> WhatsApp
       </a>
 
       <a href="mailto:parvez201313@gmail.com"
@@ -275,15 +285,12 @@
           <a href="https://www.youtube.com/@ABUSAYEDPARVEZ" target="_blank">
             <i class="fa-brands fa-youtube"></i> YouTube
           </a>
-
           <a href="https://www.linkedin.com/in/md-abu-sayed-parvez2000" target="_blank">
             <i class="fa-brands fa-linkedin"></i> LinkedIn
           </a>
-
           <a href="https://www.researchgate.net/profile/Md-Abu-Sayed-Parvez" target="_blank">
             <i class="fa-brands fa-researchgate"></i> ResearchGate
           </a>
-
           <a href="https://www.facebook.com/share/19b5zPNKir/" target="_blank">
             <i class="fa-brands fa-facebook"></i> Facebook
           </a>
