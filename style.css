@@ -402,3 +402,9 @@ a{
     padding:60px 0;
   }
 }
+/* FIX: Email button visibility */
+#contact .btn--ghost{
+  color:#0077b6;
+  border-color:#0077b6;
+}
+
