@@ -43,8 +43,8 @@ function getThumbnail(url) {
   }
 
   return id
-    ? `https://img.youtube.com/vi/${id}/hqdefault.jpg`
-    : "";
+  ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
+  : "";
 }
 
 /* ===== Load Posts (Realtime) ===== */
